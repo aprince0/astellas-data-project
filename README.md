@@ -53,9 +53,11 @@ pip install -r requirements.txt
 python main.py
 ```
 
-3. To run the tests, use the following command:
+3. To run the tests and coverage, use the following command:
 ```bash
 pytest -v test/test_data_transformer.py
+coverage run -m pytest
+coverage report
 ```
 
 4. Access the processed data stored in astellas.db. You can use SQLite clients or Python libraries for data access.
@@ -109,34 +111,3 @@ t2 AS (
 )
 SELECT * FROM t2;
 ```
-
-## Future Scope <a name="future-scope"></a>
- 
-Here are some future improvements and enhancements to the project:
-
-1. **Orchestrate the Pipeline with Airflow Triggers**: Automate the pipeline using Apache Airflow triggers to initiate processing as soon as new CSV files are updated from the source. Additionally, implement a notification system to inform data owners once the process is completed successfully.
-
-2. **Enhance Data Source Flexibility**: Ensure the codebase is adaptable to various data sources beyond just CSV, such as JSON or any other incoming formats. This makes the system more versatile and future-proof.
-
-3. **Implement Data Quality Metrics**: Incorporate data quality metrics within the ETL pipeline to assess the accuracy and completeness of data transformations. Create a user-friendly dashboard using QlikSense or Tableau for engineers and managers to monitor the quality of data products. 
-   1. Check for Data Duplication: Introduce checks to identify and eliminate duplicate records within incoming data. 
-   2. Validate Data Based on Business Rules: Implement business rule validations, e.g., verifying ZIP codes according to state patterns and address validity using a Geo-spatial library.
-
-
-4. **Consider Spark for Large Volumes**: When dealing with massive data volumes, consider using Apache Spark for efficient data processing.
-
-5. **Optimize Performance**: Improve table performance by leveraging technologies like Hive, serverless Google Cloud Platform (GCP), or Redshift, and consider partitioning strategies.
-
-6. **Implement Comprehensive Logging**: Enhance monitoring capabilities by adding detailed logs that track which files have been processed and their status.
-
-7. Include additional test cases to thoroughly assess the functionality of the code.
-
-
-8. **Implement Comprehensive Logging**: Enhance monitoring and tracking capabilities by adding detailed logging. This should include tracking which files have been processed, their processing status, and any errors or issues encountered during the ETL process. Comprehensive logging aids in troubleshooting and auditing.
-
-9. **Additional Test Cases**: Expand the test suite by including additional test cases that thoroughly assess the functionality of the code. This ensures robust and reliable data processing.
-
-These future improvements aim to enhance the project's capabilities, scalability, and maintainability, allowing it to evolve in response to changing requirements and data sources.
-
-
-Please refer to [Google Doc](https://docs.google.com/document/d/1ICRSASGg2A2zOalfwnUziY5DA0MjGpRd6m3P2MO1n0s/edit?usp=sharing), if needed.
