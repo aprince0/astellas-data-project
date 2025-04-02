@@ -29,3 +29,9 @@ jobs:
       - name: Run tests with pytest
         run: |
           pytest
+
+      - name: Run tests with pytest and coverage
+        run: |
+          coverage run -m pytest
+          coverage report
+          coverage xml
