@@ -1,0 +1,25 @@
+# Ignore Python virtual environment
+venv/
+
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore environment variables file (if you use .env)
+.env
+
+# Ignore IDE/editor settings (optional, only if using specific IDEs)
+.vscode/
+.idea/
+
+# Ignore system files (macOS/Windows)
+.DS_Store
+Thumbs.db
+
+# Ignore log files (optional)
+*.log
+
+# Ignore coverage reports (optional)
+coverage.xml
+*.coverage
